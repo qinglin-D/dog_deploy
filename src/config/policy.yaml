@@ -1,0 +1,118 @@
+description: "Robot configuration parameters" 
+
+robot:
+  name: "dog"
+  frequency: 10
+  joints:
+    # 下面的参数都以{关节名: 参数值}的形式给出
+    # 如果要改变关节信息的加载顺序，只需改joint_names即可，controller会按照joint_names的顺序加载键值对
+    joint_names:
+      - FL_hip_joint
+      - FR_hip_joint
+      - RL_hip_joint
+      - RR_hip_joint
+      - FL_thigh_joint
+      - FR_thigh_joint
+      - RL_thigh_joint
+      - RR_thigh_joint
+      - FL_calf_joint
+      - FR_calf_joint
+      - RL_calf_joint
+      - RR_calf_joint
+
+    defualt_joint_pos:
+      FL_hip_joint: 0.0
+      FR_hip_joint: 0.0
+      RL_hip_joint: 0.0
+      RR_hip_joint: 0.0
+      FL_thigh_joint: -0.38
+      FR_thigh_joint: -0.38
+      RL_thigh_joint: -0.25
+      RR_thigh_joint: -0.25
+      FL_calf_joint: 1.35
+      FR_calf_joint: 1.35
+      RL_calf_joint: 1.3
+      RR_calf_joint: 1.3
+
+    effort_limit:
+      FL_hip_joint: 10.0
+      FR_hip_joint: 10.0
+      RL_hip_joint: 10.0
+      RR_hip_joint: 10.0
+      FL_thigh_joint: 10.0
+      FR_thigh_joint: 10.0
+      RL_thigh_joint: 10.0
+      RR_thigh_joint: 10.0
+      FL_calf_joint: 10.0
+      FR_calf_joint: 10.0
+      RL_calf_joint: 10.0
+      RR_calf_joint: 10.0
+
+    velocity_limit:
+      FL_hip_joint: 26.0
+      FR_hip_joint: 26.0
+      RL_hip_joint: 26.0
+      RR_hip_joint: 26.0
+      FL_thigh_joint: 26.0
+      FR_thigh_joint: 26.0
+      RL_thigh_joint: 26.0
+      RR_thigh_joint: 26.0
+      FL_calf_joint: 26.0
+      FR_calf_joint: 26.0
+      RL_calf_joint: 26.0
+      RR_calf_joint: 26.0
+
+  actions:
+    use_default_offset: true
+    size: 12
+    clip: 100.0
+    scale:
+      FL_hip_joint: 0.06666666666666667
+      FR_hip_joint: 0.06666666666666667
+      RL_hip_joint: 0.06666666666666667
+      RR_hip_joint: 0.06666666666666667
+      FL_thigh_joint: 0.06666666666666667
+      FR_thigh_joint: 0.06666666666666667
+      RL_thigh_joint: 0.06666666666666667
+      RR_thigh_joint: 0.06666666666666667
+      FL_calf_joint: 0.06666666666666667
+      FR_calf_joint: 0.06666666666666667
+      RL_calf_joint: 0.06666666666666667
+      RR_calf_joint: 0.06666666666666667
+
+command_range:
+  policy1:
+    x:
+      - -1.0
+      - 2.0
+    y:
+      - -1.0
+      - 1.0
+    yaw:
+      - -3.141592653589793
+      - 3.141592653589793
+
+  policy2:
+    x:
+      - -0.5
+      - 1.0
+    y:
+      - -0.5
+      - 0.5
+    yaw:
+      - -0.75
+      - 0.75
+
+observations:
+  history_length: 5
+  slice_size: 47
+  encoder_output: 3
+  clip: 100.0
+  cycle: 1.2
+  scale:
+    ang_vel: 0.5
+    lin_vel: 1.0
+    dof_pos: 1.0
+    dof_vel: 0.05
+    lin_acc: 1.0
+

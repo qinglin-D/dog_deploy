@@ -43,6 +43,9 @@
 build/
 Build/
 build-*/
+install/
+log/
+src/policy/*
 
 # CMake generated files
 CMakeFiles/

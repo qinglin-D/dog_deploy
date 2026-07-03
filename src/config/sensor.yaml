@@ -1,0 +1,115 @@
+description: "Actuator configuration parameters" 
+
+
+frequency: 20.0
+sensorDataSize: 34
+actionsSize: 12
+
+
+actuator:
+  name: LRO-雷赛
+  interface_type: "can" # canfd
+  control_order:
+    # - FL_hip_joint
+    - FR_hip_joint
+    - RL_hip_joint
+    # - RR_hip_joint
+    # - FL_thigh_joint
+    # - FR_thigh_joint
+    # - RL_thigh_joint
+    # - RR_thigh_joint
+    # - FL_calf_joint
+    # - FR_calf_joint
+    # - RL_calf_joint
+    # - RR_calf_joint
+
+  motor_ID: 
+    FL_hip_joint: 0
+    FR_hip_joint: 1
+    RL_hip_joint: 2
+    RR_hip_joint: 3
+    FL_thigh_joint: 4 
+    FR_thigh_joint: 5
+    RL_thigh_joint: 6
+    RR_thigh_joint: 7
+    FL_calf_joint: 8
+    FR_calf_joint: 9
+    RL_calf_joint: 10
+    RR_calf_joint: 11
+
+  interface: 
+    FL_hip_joint: "can0"
+    FR_hip_joint: "can2"
+    RL_hip_joint: "can3"
+    RR_hip_joint: "can0"
+    FL_thigh_joint: "can0" 
+    FR_thigh_joint: "can0"
+    RL_thigh_joint: "can0"
+    RR_thigh_joint: "can0"
+    FL_calf_joint: "can0"
+    FR_calf_joint: "can0"
+    RL_calf_joint: "can0"
+    RR_calf_joint: "can0"
+    
+  stiffness:
+    FL_hip_joint: 30.0
+    FR_hip_joint: 30.0
+    RL_hip_joint: 10.0
+    RR_hip_joint: 10.0
+    FL_thigh_joint: 30.0
+    FR_thigh_joint: 30.0
+    RL_thigh_joint: 30.0
+    RR_thigh_joint: 30.0
+    FL_calf_joint: 30.0
+    FR_calf_joint: 30.0
+    RL_calf_joint: 30.0
+    RR_calf_joint: 30.0
+
+  damping:
+    FL_hip_joint: 1.0
+    FR_hip_joint: 1.0
+    RL_hip_joint: 1.0
+    RR_hip_joint: 1.0
+    FL_thigh_joint: 1.0
+    FR_thigh_joint: 1.0
+    RL_thigh_joint: 1.0
+    RR_thigh_joint: 1.0
+    FL_calf_joint: 1.0
+    FR_calf_joint: 1.0
+    RL_calf_joint: 1.0
+    RR_calf_joint: 1.0
+
+  position_limit:
+    FL_hip_joint: [0.0, 3.14]
+    FR_hip_joint: [0.0, 3.14]
+    RL_hip_joint: [0.0, 3.14]
+    RR_hip_joint: [0.0, 3.14]
+    FL_thigh_joint: [0.0, 3.14]
+    FR_thigh_joint: [0.0, 3.14]
+    RL_thigh_joint: [0.0, 3.14]
+    RR_thigh_joint: [0.0, 3.14]
+    FL_calf_joint: [0.0, 3.14]
+    FR_calf_joint: [0.0, 3.14]
+    RL_calf_joint: [0.0, 3.14]
+    RR_calf_joint: [0.0, 3.14]
+
+
+imu:
+  name: DM-达妙
+  port: /dev/ttyACM0
+  baudrate: 921600
+
+
+gamepad:
+  axis_x: 1
+  axis_y: 0
+  axis_yaw: 4
+  axis_trigger: 3
+
+  button_terminate: 0
+  button_pause: 2
+  button_go_on: 1
+  button_reset: 3
+  button_policy_1: 4
+  button_policy_2: 5
+  button_policy_3: 6
